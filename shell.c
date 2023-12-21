@@ -2,22 +2,19 @@
 
 int main(void)
 {
-	char *lineptr = NULL;
+	char *buffer = NULL, *cwd = NULL;
 	size_t bytes_read, size;
-	while (1)
-	{
-		printf("~$ ");
 
-		bytes_read = getline(&lineptr, &size, stdin);
-		if (bytes_read == -1)
+	if (isatty(STDIN_FILENO))
+	{
+		while (1)
 		{
-			free(lineptr);
-			printf("Exited\n");
-			exit(EXIT_FAILURE);
+			
+			getcwd(cwd, 
+			printf("~$ ");
+
 		}
 
-		printf("%s", lineptr);
-		printf("Size of input buffer is: %ld\n", size);
 	}
 	return (0);
 }
