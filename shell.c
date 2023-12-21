@@ -10,7 +10,7 @@ int main(void)
 		while (1)
 		{
 			
-			getcwd(cwd, 
+			getcwd(cwd, LARGE_BUF_LENGTH); 
 			printf("~$ ");
 
 		}
